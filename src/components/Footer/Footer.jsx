@@ -39,7 +39,6 @@ const Footer = () => {
                         <ul className={styles.linkList}>
                             <li><a href="#hero">&gt; cd /home</a></li>
                             <li><a href="#about">&gt; cat info.txt</a></li>
-                            <li><a href="#committee">&gt; ls /admins</a></li>
                             <li><a href="#lastyear">&gt; history | grep legacy</a></li>
                             <li><Link to="/register" className={styles.highlight}>&gt; ./execute_reg.sh</Link></li>
                         </ul>
