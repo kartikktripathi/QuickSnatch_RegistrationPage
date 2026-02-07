@@ -1,8 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 const Footer = () => {
+    const location = useLocation();
+
+    const scrollToSection = (id) => {
+        if (location.pathname !== '/') {
+            window.location.href = `/#${id}`;
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.systemBar}>
@@ -37,9 +50,9 @@ const Footer = () => {
                     <div className={styles.col}>
                         <h4 className={styles.termHeader}> // SITE_MAP</h4>
                         <ul className={styles.linkList}>
-                            <li><a href="#hero">&gt; cd /home</a></li>
-                            <li><a href="#about">&gt; cat info.txt</a></li>
-                            <li><a href="#lastyear">&gt; history | grep legacy</a></li>
+                            <li><a onClick={() => scrollToSection('hero')}>&gt; cd /home</a></li>
+                            <li><a onClick={() => scrollToSection('about')}>&gt; cat info.txt</a></li>
+                            <li><a onClick={() => scrollToSection('lastyear')}>&gt; history | grep legacy</a></li>
                             <li><Link to="/register" className={styles.highlight}>&gt; ./execute_reg.sh</Link></li>
                         </ul>
                     </div>
