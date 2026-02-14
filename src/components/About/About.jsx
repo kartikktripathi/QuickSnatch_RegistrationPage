@@ -80,12 +80,7 @@ const TiltCard = ({ title, desc, icon, index, onReadMore }) => {
                 <h3 className={styles.cardTitle}>{title}</h3>
                 <p className={styles.cardDesc}>{desc}</p>
 
-                <button className={styles.readMoreBtn} onClick={(e) => {
-                    e.stopPropagation();
-                    onReadMore();
-                }}>
-                    // READ_MORE
-                </button>
+
             </div>
 
             {/* Corner Accents */}
@@ -129,7 +124,7 @@ const About = () => {
 
     return (
         <SectionWrapper id="about" className={styles.aboutSection}>
-            <h2 className={styles.heading}>SYSTEM_OVERVIEW</h2>
+            <h2 className={styles.heading}>SYSTEM OVERVIEW</h2>
             <div className={styles.grid}>
                 {cards.map((card, index) => (
                     <TiltCard
