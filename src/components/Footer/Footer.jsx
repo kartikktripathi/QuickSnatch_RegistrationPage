@@ -71,12 +71,12 @@ const Footer = () => {
                     <div className={styles.col}>
                         <h4 className={styles.termHeader}> // COMM_CHANNELS</h4>
                         <ul className={styles.linkList}>
-                            <li><a href="#">[0] INSTAGRAM_LINK_ESTABLISHED</a></li>
-                            <li><a href="#">[1] DISCORD_SERVER_NOT_FOUND</a></li>
-                            <li><a href="#">[2] LINKEDIN_HANDSHAKE</a></li>
-                            <li><a href="#">[3] MAIL_PROTOCOL_SMTP</a></li>
+                            <li><a href="https://www.instagram.com/devclub.nst/">[0] INSTAGRAM_LINK_ESTABLISHED</a></li>
+                            <li><a href="https://discord.gg/VQaF8U5T">[1] DISCORD_SERVER_NOT_FOUND</a></li>
+                            <li><a href="https://www.linkedin.com/company/nst-sdc/">[2] LINKEDIN_HANDSHAKE</a></li>
                         </ul>
                     </div>
+
 
 
                     {/* Column 4: System Logs / Location */}

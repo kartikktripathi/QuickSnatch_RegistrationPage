@@ -43,7 +43,8 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    justify-content: space-around;
     gap: 3rem;
     padding: var(--section-spacing-desktop) 0;
     justify-items: start;
