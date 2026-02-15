@@ -61,23 +61,13 @@ const Footer = () => {
                     <div className={styles.col}>
                         <h4 className={styles.termHeader}> // COMM_CHANNELS</h4>
                         <ul className={styles.linkList}>
-                            <li><a href="#">[0] INSTAGRAM_LINK_ESTABLISHED</a></li>
+                            <li><a href="https://www.instagram.com/devclub.nst/">[0] INSTAGRAM_LINK_ESTABLISHED</a></li>
                             <li><a href="#">[1] DISCORD_SERVER_NOT_FOUND</a></li>
-                            <li><a href="#">[2] LINKEDIN_HANDSHAKE</a></li>
-                            <li><a href="#">[3] MAIL_PROTOCOL_SMTP</a></li>
+                            <li><a href="https://www.linkedin.com/company/nst-sdc/">[2] LINKEDIN_HANDSHAKE</a></li>
                         </ul>
                     </div>
 
-                    {/* Column 4: System Logs / Location */}
-                    <div className={styles.col}>
-                        <h4 className={styles.termHeader}> // GEO_LOCATION</h4>
-                        <div className={styles.terminalBlock}>
-                            <p>TARGET: NST Pune</p>
-                            <p>COORDS: 18.5204° N, 73.8567° E</p>
-                            <p>SECTOR: 7-G</p>
-                            <p className={styles.warning}>WARNING: UNAUTHORIZED SECTORS AHEAD</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
