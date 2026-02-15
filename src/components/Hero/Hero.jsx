@@ -19,7 +19,11 @@ const Hero = () => {
                     decode cryptic logs, and track down the 0xROOT bounty before time runs out.
                 </p>
                 <Link to="/register" className={styles.ctaButton}>
+
+                    Register Now
+
                     REGISTER NOW
+
                 </Link>
 
             </div>
