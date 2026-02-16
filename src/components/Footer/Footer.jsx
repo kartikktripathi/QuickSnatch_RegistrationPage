@@ -51,7 +51,7 @@ const Footer = () => {
                         <h4 className={styles.termHeader}> // SITE_MAP</h4>
                         <ul className={styles.linkList}>
                             <li><a onClick={() => scrollToSection('hero')}>&gt; cd /home</a></li>
-                            <li><a onClick={() => scrollToSection('about')}>&gt; cat info.txt</a></li>
+                            <li><a onClick={() => scrollToSection('guidelines')}>&gt; cat info.txt</a></li>
                             <li><a onClick={() => scrollToSection('lastyear')}>&gt; history | grep legacy</a></li>
                             <li><Link to="/register" className={styles.highlight}>&gt; ./execute_reg.sh</Link></li>
                         </ul>

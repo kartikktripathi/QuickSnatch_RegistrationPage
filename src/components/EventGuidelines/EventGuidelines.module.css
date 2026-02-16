@@ -1,0 +1,228 @@
+.container {
+    padding: 4rem 0;
+    color: var(--color-text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.title {
+    font-size: var(--h2-size);
+    color: var(--color-neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+    margin-bottom: 0.5rem;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    font-family: var(--font-mono);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Base card style */
+.card {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Corner accents */
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.card::before {
+    top: -1px;
+    left: -1px;
+    border-top-color: var(--color-neon-cyan);
+    border-left-color: var(--color-neon-cyan);
+}
+
+.card::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-color: var(--color-neon-cyan);
+    border-right-color: var(--color-neon-cyan);
+}
+
+/* Top Sections */
+.infoCard {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 4px solid var(--color-neon-cyan);
+}
+
+.descriptionCard {
+    grid-column: span 7;
+}
+
+/* Event Info Specifics */
+.dateBlock {
+    margin-bottom: 1.5rem;
+}
+
+/* .timeBlock intentionally left out if not needed, or add styles here */
+
+.label {
+    display: block;
+    font-family: var(--font-mono);
+    color: var(--color-neon-cyan);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.descText {
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+/* Rules Section */
+.rulesContainer {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+}
+
+.sectionTitle {
+    font-size: 1.2rem;
+    color: var(--color-neon-cyan);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.rulesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.ruleItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease;
+}
+
+.ruleItem:hover {
+    background: rgba(0, 243, 255, 0.05);
+}
+
+.bullet {
+    color: var(--color-neon-cyan);
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
+
+.ruleText {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* Footer Section */
+.footerGrid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.footerCard {
+    background: linear-gradient(45deg, rgba(0, 20, 20, 0.9), rgba(0, 10, 10, 0.95));
+}
+
+.highlightText {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.highlightText strong {
+    color: var(--color-neon-cyan);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .infoCard {
+        grid-column: span 12;
+    }
+
+    .descriptionCard {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Reduce card padding on mobile to save space */
+    .card {
+        padding: 1.25rem;
+    }
+
+    .rulesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .value {
+        font-size: 1.2rem;
+    }
+}
