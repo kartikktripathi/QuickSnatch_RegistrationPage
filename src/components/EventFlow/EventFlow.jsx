@@ -19,14 +19,14 @@ const EventFlow = () => {
 
     const steps = [
 
-        { title: "First CLI Challenge", desc: "Execute commands. Solve the terminal puzzle.", icon: "💻" },
-        { title: "Code Submission", desc: "Extract the key. Submit to verify access.", icon: "🔑" },
-        { title: "Location Riddle", desc: "Decrypt message. Identify the physical target.", icon: "🧩" },
-        { title: "Find Location", desc: "Navigate campus. Locate the hidden marker.", icon: "📍" },
-        { title: "Submit Location Code", desc: "Enter coordinates using the marker code.", icon: "📡" },
-        { title: "Next Challenge", desc: "System unlocked. Proceed to higher difficulty.", icon: "🔓" },
-        { title: "Repeat Cycle", desc: "Loop execution until mission complete.", icon: "🔄" },
-        { title: "Scoring & Survival", desc: "Maximize points. Avoid elimination protocol.", icon: "🏆" }
+        { title: "First CLI Challenge", desc: "Execute commands. Solve the terminal puzzle." },
+        { title: "Code Submission", desc: "Extract the key. Submit to verify access." },
+        { title: "Location Riddle", desc: "Decrypt message. Identify the physical target." },
+        { title: "Find Location", desc: "Navigate campus. Locate the hidden marker." },
+        { title: "Submit Location Code", desc: "Enter coordinates using the marker code." },
+        { title: "Next Challenge", desc: "System unlocked. Proceed to higher difficulty." },
+        { title: "Repeat Cycle", desc: "Loop execution until mission complete." },
+        { title: "Scoring & Survival", desc: "Maximize points. Avoid elimination protocol." }
     ];
 
     const getPosition = (index, cols) => {
