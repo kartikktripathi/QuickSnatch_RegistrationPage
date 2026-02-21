@@ -61,9 +61,9 @@ const Navbar = () => {
                     <a onClick={() => scrollToSection('hero')} className={styles.link}>/home</a>
                     <a onClick={() => scrollToSection('guidelines')} className={styles.link}>/man_pages</a>
                     <a onClick={() => scrollToSection('lastyear')} className={styles.link}>/logs</a>
-                    <Link to="/register" className={styles.registerBtn}>
-                        ./EXEC_REG.sh
-                    </Link>
+                    <span className={styles.registerBtn} style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+                        REGISTRATIONS CLOSED
+                    </span>
                 </div>
 
 

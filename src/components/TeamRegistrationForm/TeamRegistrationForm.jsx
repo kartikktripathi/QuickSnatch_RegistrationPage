@@ -91,72 +91,8 @@ const TeamRegistrationForm = () => {
     const [submitting, setSubmitting] = useState(false);
     const handleSubmit = async (e) => {
         if (e) e.preventDefault();
-
-        if (submitting) return; // prevents double submit
-
-        if (!validate()) {
-            return;
-        }
-
-        setSubmitting(true);
-
-        // normalize data BEFORE sending to DB
-        const cleanMembers = members.map(m => ({
-            name: m.name.trim(),
-            email: m.email.trim().toLowerCase()
-        }));
-
-        const cleanTeamName = teamName.trim();
-
-        const { error } = await supabase
-            .from("registrations")
-            .insert([
-                {
-                    team_name: cleanTeamName,
-                    leader_phone: leaderPhone,
-
-                    member1_name: cleanMembers[0].name,
-                    member1_email: cleanMembers[0].email,
-
-                    member2_name: cleanMembers[1].name,
-                    member2_email: cleanMembers[1].email,
-
-                    member3_name: cleanMembers[2].name,
-                    member3_email: cleanMembers[2].email,
-
-                    member4_name: cleanMembers[3]?.name || null,
-                    member4_email: cleanMembers[3]?.email || null,
-
-                    member5_name: cleanMembers[4]?.name || null,
-                    member5_email: cleanMembers[4]?.email || null,
-                }
-            ]);
-
-    if (error) {
-        console.error("INSERT ERROR:", error);
-
-        if (error.message?.includes("Participant already registered")) {
-            setServerError("1 or more participant(s) has already registered in another team.");
-        }
-        else if (error.message?.includes("unique_leader_phone")) {
-            setServerError("This phone number has already registered a team.");
-        }
-        else if (error.message?.includes("unique_team_name")) {
-            setServerError("This team name is already registered.");
-        }
-        else if (error.message?.toLowerCase().includes("duplicate")) {
-            setServerError("Duplicate registration detected.");
-        }
-        else {
-            setServerError("Server error while submitting registration.");
-        }
-
-        setSubmitting(false);
+        // Registrations are closed. Prevent any submission.
         return;
-    }
-
-        setSubmitted(true);
-        setSubmitting(false);
     };
 
     const handleReturnHome = () => {
@@ -203,6 +139,21 @@ const TeamRegistrationForm = () => {
                     <p className={styles.formSubtitle}>Quick Snatch 2.0 // MISSION_ENROLLMENT</p>
                 </div>
 
+                <div style={{
+                    backgroundColor: 'rgba(255, 68, 68, 0.1)',
+                    border: '1px solid #ff4444',
+                    color: '#ff4444',
+                    padding: '1rem',
+                    borderRadius: '4px',
+                    marginBottom: '1.5rem',
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px'
+                }}>
+                    Registrations for Quick Snatch 2.0 are now closed. Thank you for your interest!
+                </div>
+
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <div className={styles.sectionHeader}>TEAM_IDENTITY</div>
                     <Input
@@ -212,6 +163,7 @@ const TeamRegistrationForm = () => {
                         onChange={(e) => setTeamName(e.target.value)}
                         error={errors.teamName}
                         required
+                        disabled={true}
                     />
 
                     <div className={styles.sectionHeader}>SQUAD_MEMBERS</div>
@@ -225,6 +177,8 @@ const TeamRegistrationForm = () => {
                                             className={styles.removeMemberButton}
                                             onClick={() => removeMember(index)}
                                             title="Remove Member"
+                                            disabled={true}
+                                            style={{ opacity: 0.5, cursor: 'not-allowed' }}
                                         >
                                             ×
                                         </button>
@@ -239,6 +193,7 @@ const TeamRegistrationForm = () => {
                                         onChange={(e) => updateMember(index, 'name', e.target.value)}
                                         error={errors[`memberName${index}`]}
                                         required
+                                        disabled={true}
                                     />
                                     <Input
                                         label="Email"
@@ -247,6 +202,7 @@ const TeamRegistrationForm = () => {
                                         onChange={(e) => updateMember(index, 'email', e.target.value)}
                                         error={errors[`memberEmail${index}`]}
                                         required
+                                        disabled={true}
                                     />
                                     {index === 0 && (
                                         <Input
@@ -259,6 +215,7 @@ const TeamRegistrationForm = () => {
                                             }}
                                             error={errors.leaderPhone}
                                             required
+                                            disabled={true}
                                         />
                                     )}
                                 </div>
@@ -271,6 +228,8 @@ const TeamRegistrationForm = () => {
                             type="button"
                             className={styles.addButton}
                             onClick={addMember}
+                            disabled={true}
+                            style={{ opacity: 0.5, cursor: 'not-allowed' }}
                         >
                             <span className={styles.addIcon}>+</span> ADD NEW SQUAD MEMBER
                         </button>
@@ -290,11 +249,18 @@ const TeamRegistrationForm = () => {
 
                     <div className={styles.submitSection}>
                         <button
-                            type="submit"
+                            type="button"
                             className={styles.submitButton}
-                            disabled={submitting}
+                            disabled={true}
+                            style={{
+                                opacity: 0.5,
+                                cursor: 'not-allowed',
+                                backgroundColor: '#1a1a1a',
+                                color: '#666',
+                                borderColor: '#333'
+                            }}
                         >
-                            {submitting ? " SUBMITTING..." : "CONFIRM REGISTRATION"}
+                            REGISTRATIONS CLOSED
                         </button>
                     </div>
                 </form>

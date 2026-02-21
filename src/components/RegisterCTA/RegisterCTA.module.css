@@ -63,10 +63,21 @@
     font-size: 1.1rem;
     transition: all 0.3s ease;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .button:hover {
     background: #fff;
     box-shadow: 0 0 20px var(--color-neon-cyan);
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .button {
+        width: 100%;
+        max-width: 300px;
+        padding: 1rem 1.5rem;
+        margin: 0 auto;
+    }
 }

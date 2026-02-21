@@ -18,9 +18,9 @@ const Hero = () => {
                     A high-stakes digital scavenger hunt. Navigate the terminal,
                     decode cryptic logs, and track down the 0xROOT bounty before time runs out.
                 </p>
-                <Link to="/register" className={styles.ctaButton}>
-                    REGISTER NOW
-                </Link>
+                <button disabled className={styles.ctaButton} style={{ opacity: 0.5, cursor: 'not-allowed' }}>
+                    REGISTRATIONS CLOSED
+                </button>
 
             </div>
         </SectionWrapper>
