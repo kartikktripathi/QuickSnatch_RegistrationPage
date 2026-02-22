@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
 import LastYear from '../components/LastYear/LastYear';
+import Winners from '../components/Winners/Winners';
 import EventGuidelines from '../components/EventGuidelines/EventGuidelines';
 
 import RegisterCTA from '../components/RegisterCTA/RegisterCTA';
@@ -17,6 +18,7 @@ const Home = () => {
             <SystemStatus />
             <main>
                 <Hero />
+                <Winners />
                 <EventGuidelines />
                 <LastYear />
 

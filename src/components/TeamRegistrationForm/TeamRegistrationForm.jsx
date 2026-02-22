@@ -151,7 +151,7 @@ const TeamRegistrationForm = () => {
                     textTransform: 'uppercase',
                     letterSpacing: '1px'
                 }}>
-                    Registrations for Quick Snatch 2.0 are now closed. Thank you for your interest!
+                    EVENT EXECUTED
                 </div>
 
                 <form onSubmit={handleSubmit} className={styles.form}>
@@ -260,7 +260,7 @@ const TeamRegistrationForm = () => {
                                 borderColor: '#333'
                             }}
                         >
-                            REGISTRATIONS CLOSED
+                            EVENT EXECUTED
                         </button>
                     </div>
                 </form>

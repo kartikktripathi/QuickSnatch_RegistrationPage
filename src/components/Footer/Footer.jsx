@@ -53,7 +53,7 @@ const Footer = () => {
                             <li><a onClick={() => scrollToSection('hero')}>&gt; cd /home</a></li>
                             <li><a onClick={() => scrollToSection('guidelines')}>&gt; cat info.txt</a></li>
                             <li><a onClick={() => scrollToSection('lastyear')}>&gt; history | grep legacy</a></li>
-                            <li><span className={styles.highlight} style={{ opacity: 0.5, cursor: 'not-allowed' }}>&gt; registrations_closed</span></li>
+                            <li><span className={styles.highlight} style={{ opacity: 0.5, cursor: 'not-allowed' }}>&gt; event_executed</span></li>
                         </ul>
                     </div>
 

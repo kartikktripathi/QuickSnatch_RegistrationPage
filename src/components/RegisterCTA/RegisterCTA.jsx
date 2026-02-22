@@ -10,7 +10,7 @@ const RegisterCTA = () => {
                 <h2 className={styles.title}>Are you ready to breach?</h2>
                 <p className={styles.subtitle}>Spots are limited. Secure your terminal access now.</p>
                 <button disabled className={styles.button} style={{ opacity: 0.5, cursor: 'not-allowed' }}>
-                    REGISTRATIONS CLOSED
+                    EVENT EXECUTED
                 </button>
             </div>
         </SectionWrapper>

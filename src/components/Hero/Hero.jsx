@@ -19,7 +19,7 @@ const Hero = () => {
                     decode cryptic logs, and track down the 0xROOT bounty before time runs out.
                 </p>
                 <button disabled className={styles.ctaButton} style={{ opacity: 0.5, cursor: 'not-allowed' }}>
-                    REGISTRATIONS CLOSED
+                    EVENT EXECUTED
                 </button>
 
             </div>
