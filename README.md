@@ -1,3 +1,3 @@
 # QuickSnatch_RegistrationPage
 
-live demo : https://quick-snatch-registration-page.vercel.app/
+live demo: https://quick-snatch-registration-page-bay.vercel.app/
